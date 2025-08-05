@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 import '../styles/TaskForm.css'
 
-const TaskForm = ({addTask}) => {
+const TaskForm = ({columnId, addTaskColumn}) => {
 
 	const [value, setValue] = useState('')
 	const handleChange = (e) => {
@@ -10,7 +10,7 @@ const TaskForm = ({addTask}) => {
 	}
 
 	const onAddTask = () => {
-		addTask(value)
+		addTaskColumn(columnId, value)
 		setValue('')
 	}
 

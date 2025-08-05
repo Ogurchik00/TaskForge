@@ -1,23 +1,25 @@
 import '../styles/TaskItem.css'
 
 
-const TaskItem = ({id, text, completed, onTogle, onDelete}) => {
+const TaskItem = ({columnId, taskId, text, taskCompleted, deleteTaskColumn, completeTaskColumn}) => {
 
 	return (
 		<li
 			className="TaskItem"
 		>
-			<p className={`TaskItem-text ${completed ? "completed" : ""}`}>
-				{text}
+			<p className={`${taskCompleted ? 'completed' : ''}`}>
+				{
+					text
+				}
 			</p>
       <div>
 				<button
-					onClick={() => onTogle(id)}
+					onClick={() => completeTaskColumn(columnId, taskId)}
         >
-					{completed ? "Вернуть" : "Завершить"} 
+					Завершить
         </button>
 				<button
-					onClick={() => onDelete(id)}
+					onClick={() => deleteTaskColumn(columnId, taskId)}
 				>
 					Удалить
 				</button>

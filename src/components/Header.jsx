@@ -5,7 +5,7 @@ const Header = () => {
 	return (
 		<div className='Header'>
 			<p>
-				Hi, I'm a todo list
+			Hi, I'm a better structured to-do list.
 			</p>
 		</div>
 	)
