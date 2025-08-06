@@ -1,25 +1,28 @@
+import { useDispatch } from 'react-redux'
+import { removeTaskFromBoard, toggleTaskInBoard } from '../store/boardsSlice'
+
 import '../styles/TaskItem.css'
 
 
-const TaskItem = ({columnId, taskId, text, taskCompleted, deleteTaskColumn, completeTaskColumn}) => {
+const TaskItem = ({boardId, taskId, text, completed}) => {
+
+	const dispatch = useDispatch()
 
 	return (
 		<li
 			className="TaskItem"
 		>
-			<p className={`${taskCompleted ? 'completed' : ''}`}>
-				{
-					text
-				}
+			<p className={`${completed ? 'completed' : ''}`}>
+				{text}
 			</p>
-      <div>
+			<div>
 				<button
-					onClick={() => completeTaskColumn(columnId, taskId)}
-        >
-					Завершить
-        </button>
+					onClick={() => dispatch(toggleTaskInBoard({boardId,taskId}))}
+				>	
+					{completed ? 'вернуть' : 'завершить'}
+				</button>
 				<button
-					onClick={() => deleteTaskColumn(columnId, taskId)}
+					onClick={() => dispatch(removeTaskFromBoard({boardId, taskId}))}
 				>
 					Удалить
 				</button>
