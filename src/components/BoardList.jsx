@@ -1,8 +1,9 @@
 import { useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { addBoard } from "../store/boardsSlice"
+import { Link } from "react-router-dom"
 
-import Board from "./Board"
+import '../styles/BoardList.css'
 
 
 const BoardList = () => {
@@ -17,28 +18,49 @@ const BoardList = () => {
 	const boards = useSelector(state => state.boards.boards)
 
 	const onAddBoard = () => {
-		dispatch(addBoard({boardName}))
-		setBoardName('')
+		if(boardName !== '') {
+			dispatch(addBoard({boardName}))
+			setBoardName('')
+		}
 	}
 
 	return (
-		<div>
-			<div>
-				<input 
-					type="text" 
-					placeholder="введите название доски"
-					value={boardName}
-					onChange={handleBoardNameChange}
-				/>
-				<button
-					onClick={onAddBoard}
-				>
-					создать доску
-				</button>
+		<div className="BoardList">
+			<div className="wrapper">
+				<div className="boardList-addBoard">
+					<input
+						className="boardList-addBoard-input"
+						type="text" 
+						placeholder="введите название доски"
+						value={boardName}
+						onChange={handleBoardNameChange}
+					/>
+					<button
+						className="boardList-addBoard-button"
+						onClick={onAddBoard}
+					>
+						создать доску
+					</button>
+				</div>
+				<div className="boardList-items">
+					{
+						boards.map(({boardId, title}) => (
+							<Link 
+								to={`/board/${boardId}`} 
+								key={boardId} 
+								className="Link">
+							<div	
+								className="bordList-item"
+								
+							>	
+								<p className="bordList-item-title">
+									{title}
+								</p>
+							</div>
+						</Link>))
+						}
+				</div>
 			</div>
-				{
-					boards.map(({boardId, title, tasks}) => <Board key={boardId} boardId={boardId} title={title} tasks={tasks}/>)
-				}
 		</div>
 	)
 

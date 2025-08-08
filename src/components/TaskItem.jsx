@@ -9,25 +9,27 @@ const TaskItem = ({boardId, taskId, text, completed}) => {
 	const dispatch = useDispatch()
 
 	return (
-		<li
+		<div
 			className="TaskItem"
 		>
-			<p className={`${completed ? 'completed' : ''}`}>
+			<p className={`taskItem-text ${completed ? 'completed' : ''}`}>
 				{text}
 			</p>
-			<div>
+			<div className='taslItem-buttoms'>
 				<button
+					className='button-complete'
 					onClick={() => dispatch(toggleTaskInBoard({boardId,taskId}))}
 				>	
 					{completed ? 'вернуть' : 'завершить'}
 				</button>
 				<button
+					className='button-remove'
 					onClick={() => dispatch(removeTaskFromBoard({boardId, taskId}))}
 				>
 					Удалить
 				</button>
 			</div>
-		</li>
+		</div>
         
 	)
 

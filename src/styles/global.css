@@ -1,0 +1,33 @@
+:root {
+    --color-bg: #f8f9fa;
+    --color-board: #ffffff;
+    --color-btn: #4a6fa5;
+    --color-hover: #6c757d;
+    --color-text: #212529;
+    --color-secText: #6c757d;
+    --color-link: #94a1b2;
+    --color-completed: #28a745;
+    --color-taskA: #ffebee;
+    --color-taskA-text: #d32f2f;
+    --color-taskB: #fff8e1;
+    --color-taskB-text: #ff8f00;
+    --color-taskC: #e8f5e9;
+    --color-taskC-text: #388e3c;
+}
+
+[data-theme="dark"] {
+    --color-bg: #1a1a2e;
+    --color-board: #2A3A6A;
+    --color-btn: #4cc9f0;
+    --color-hover: #7f5af0;
+    --color-text: #e2e2e2;
+    --color-secText: #94a1b2;
+    --color-link: #ffffff;
+    --color-completed: #2cb67d;
+    --color-taskA: #3a1e1e;
+    --color-taskA-text: #ff6e6e;
+    --color-taskB: #332a1d;
+    --color-taskB-text: #ffb74d;
+    --color-taskC: #1e2a1e;
+    --color-taskC-text: #81c784;
+  }

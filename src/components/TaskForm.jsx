@@ -15,12 +15,17 @@ const TaskForm = ({boardId}) => {
 	const dispatch = useDispatch()
 
 	const onAddTask = () => {
-		dispatch(addTaskOnBoard({boardId, task:{
-			taskId: nanoid(),
-			text: text,
-			completed: false,
-		}}))
-		setText('')
+		if(text !== ''){
+			dispatch(addTaskOnBoard({boardId, task:{
+				taskId: nanoid(),
+				text: text,
+				completed: false,
+			}}))
+			setText('')
+		} else {
+			alert('Текст задачи не может быть пустым')
+		}
+
 	}
 
 	return (

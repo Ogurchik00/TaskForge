@@ -6,25 +6,28 @@
     border-radius: 20px;
     margin-top: 10px;
     display: flex;
-    justify-content: space-around;
+    align-items: center;
 }
 
 .TaskItem:last-child{
     margin-bottom: 10px;
 }
 
-.TaskItem-text {
-    width: 80%;
+.taskItem-text {
+    flex: 3;
+    text-align: center;
+    font-size: 18px;
 }
 
-.TaskItem div {
+.taslItem-buttoms {
     width: 20%;
     display: flex;
     align-items: center;
+    flex: 1;
 }
 
-.TaskItem div button{
-    height: 70%;
+.button-remove {
+    margin-left: 20px;
 }
 
 

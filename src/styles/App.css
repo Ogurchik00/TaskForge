@@ -1,5 +1,43 @@
-#root {
-  max-width: 1280px;
+
+.wrapper {
+  width: 100%;
+  max-width: 1920px;
   margin: 0 auto;
-  text-align: center;
+}
+
+button {
+  background-color: var(--color-btn);
+  color: var(--color-text);
+  border-radius: 30px;
+}
+
+button:hover {
+  background-color: var(--color-hover);
+}
+
+input {
+  border-radius: 20px;
+}
+
+/* Стилизация всей полосы прокрутки */
+::-webkit-scrollbar {
+  width: 12px;  /* ширина вертикального скроллбара */
+  height: 20px; /* высота горизонтального скроллбара */
+}
+
+/* Стилизация "дорожки" скроллбара */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 6px;
+}
+
+/* Стилизация "бегунка" (ползунка) */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 6px;
+}
+
+/* Стилизация при наведении на "бегунок" */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
