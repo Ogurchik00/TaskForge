@@ -9,9 +9,14 @@ const boardsSlce = createSlice({
 			addBoard: (state, action) => {
 				state.boards.push({
 					boardId: nanoid(),
-					title: action.payload.boardName,
+					title: action.payload.text,
+					description: action.payload.description,
+					creationDate: '',
+					colorBg: action.payload.colorBg,
+					colorText: action.payload.colorText,
 					tasks: [],
 				})
+				console.log(action.payload.colorBg)
 			},
 			removeBoard: (state, action) => {
 				const {boardId} = action.payload
@@ -19,7 +24,13 @@ const boardsSlce = createSlice({
 			},
 
 			addTaskOnBoard: (state, action) => {
-				const {boardId, task} = action.payload
+				const {boardId, text, priority} = action.payload
+				const task = {
+					taskId: nanoid(),
+					text: text,
+					completed: false,
+					priority: priority,
+				}
 				const board = state.boards.find((board) => board.boardId === boardId)
 				board.tasks.push(task)
 			},

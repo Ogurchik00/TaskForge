@@ -6,19 +6,11 @@
   border-top: 2px solid black;
 }
 
-.boardList-addBoard {
-	margin-top: 20px;
+.addBoard {
+	width: 100%;
+	margin-top: 10px;
 	display: flex;
 	justify-content: center;
-}
-
-.boardList-addBoard-input {
-	width: 25%;
-	height: 2vh;
-}
-
-.boardList-addBoard-button {
-	margin-left: 30px;
 }
 
 .boardList-items {
@@ -38,7 +30,6 @@
 	align-items: center;
 	border-radius: 10px;
 	box-shadow: 0 0 5px black;
-  background-color: var(--color-board);
 	transition:0.3s;
 }
 

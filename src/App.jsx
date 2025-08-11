@@ -3,8 +3,8 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 import './styles/App.css'
 
-import Header from './components/Header'
-import BoardList from './components/BoardList'
+import Header from './components/features/Header'
+import BoardList from './components/features/BoardList'
 import BoardPage from './pages/BoardPage'
 
 

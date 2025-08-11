@@ -1,8 +1,8 @@
-import { useParams, useNavigate } from 'react-router-dom'
+import { useParams} from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import '../styles/BoardPage.css'
 
-import Board from '../components/Board'
+import Board from '../components/features/Board'
 
 const BoardPage = () => {
 

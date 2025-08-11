@@ -1,7 +1,7 @@
 import { useDispatch} from "react-redux"
-import { toggleTheme } from "../store/themeSlice"
+import { toggleTheme } from "../../store/themeSlice"
 
-import '../styles/Header.css'
+import '../../styles/Header.css'
 
 const Header = () => {
 

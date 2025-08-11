@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { nanoid } from '@reduxjs/toolkit'
-import { addTaskOnBoard } from '../store/boardsSlice'
+import { addTaskOnBoard } from '../../store/boardsSlice'
 
-import '../styles/TaskForm.css'
+import '../../styles/TaskForm.css'
 
 const TaskForm = ({boardId}) => {
 

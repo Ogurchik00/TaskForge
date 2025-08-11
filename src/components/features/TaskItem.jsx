@@ -1,16 +1,16 @@
 import { useDispatch } from 'react-redux'
-import { removeTaskFromBoard, toggleTaskInBoard } from '../store/boardsSlice'
+import { removeTaskFromBoard, toggleTaskInBoard } from '../../store/boardsSlice'
 
-import '../styles/TaskItem.css'
+import '../../styles/TaskItem.css'
 
 
-const TaskItem = ({boardId, taskId, text, completed}) => {
+const TaskItem = ({boardId, taskId, text, completed, priority}) => {
 
 	const dispatch = useDispatch()
 
 	return (
 		<div
-			className="TaskItem"
+			className={`TaskItem ${priority}`}
 		>
 			<p className={`taskItem-text ${completed ? 'completed' : ''}`}>
 				{text}
