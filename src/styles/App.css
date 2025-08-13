@@ -20,19 +20,6 @@ input {
   border-radius: 20px;
 }
 
-.A {
-  background-color: var(--color-taskA);
-}
-
-.B {
-  background-color: var(--color-taskB);
-  margin-left: 5px;
-}
-
-.C {
-  background-color: var(--color-taskC);
-  margin-left: 5px;
-}
 
 /* Стилизация всей полосы прокрутки */
 ::-webkit-scrollbar {

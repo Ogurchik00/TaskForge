@@ -1,22 +1,34 @@
 
-import { useDispatch, useSelector } from "react-redux"
+import { useState } from "react"
+import { useNavigate } from "react-router-dom"
+import { useSelector } from "react-redux"
 import { useParams } from "react-router-dom"
-import { removeBoard, addTaskOnBoard } from "../../store/boardsSlice"
+
 
 import '../../styles/Board.css'
+import AddColumn from "../ui/AddColumn"
+import Column from "../ui/Column"
 
-import TextAddInputCustom from "../ui/TextAddInputCustom"
-
-import TaskItem from "./TaskItem"
 
 const Board = () => {
+
+	const [activeAddColumn, addActiveAddColumn] = useState(false)
+	const [activeOption, addActiveOption] = useState(false)
+
+	const onActiveAddColumn = () => {
+		addActiveAddColumn(!activeAddColumn)
+	}
+
+	const onActiveOption = () => {
+		addActiveOption(!activeOption)
+	}
+
+
+	const navigate = useNavigate()
 	const {boardId} = useParams()
-	const {colorBg, title} = useSelector(state => state.boards.boards.find((board) => board.boardId === boardId))
-
-	const dispatch = useDispatch()
-
-
-
+	const {columns, colorBg, title, description} = useSelector(state => state.boards.boards.find((board) => board.boardId === boardId))
+	
+	
 	if(!boardId) return <div>Доска не найдена</div>
 
   return (
@@ -30,18 +42,44 @@ const Board = () => {
 				<span className="boardTitle">
 					{title}
 				</span>
-				<button>
-					вернуться к списку досок	
-				</button>					
-				<button>
-					добавить колонку
-				</button>
+				<div className="boardHeader-control">
+					<button
+						onClick={() => navigate(-1)}
+					>
+						вернуться к списку досок	
+					</button>					
+					<button
+						onClick={onActiveAddColumn}
+					>
+						добавить колонку
+					</button>
+					<button
+						onClick={onActiveOption}
+					>
+						настроить
+					</button>
+				</div>
 			</div>
 			<div className="boardMain">
-
+				<AddColumn boardId={boardId} active={activeAddColumn} setActive={addActiveAddColumn}/>
+				<div className="columns">
+					{	
+						columns.map(({columnId, title, tasks}) => 
+						<div 
+							className="column1"
+							key={columnId}
+						>
+							<Column boardId={boardId} columnId={columnId} title={title} tasks={tasks} />
+						</div>)
+					}
+				</div>
 			</div>
 			<div className="boardFooter">
-
+				<span>
+					{
+						description === '' ? 'описание отсутствует' : description
+					}
+				</span>
 			</div>
 		</div>
 	)

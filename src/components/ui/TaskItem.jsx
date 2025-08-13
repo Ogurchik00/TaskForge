@@ -4,7 +4,7 @@ import { removeTaskFromBoard, toggleTaskInBoard } from '../../store/boardsSlice'
 import '../../styles/TaskItem.css'
 
 
-const TaskItem = ({boardId, taskId, text, completed, priority}) => {
+const TaskItem = ({boardId, columnId, taskId, text, completed, priority}) => {
 
 	const dispatch = useDispatch()
 
@@ -24,7 +24,7 @@ const TaskItem = ({boardId, taskId, text, completed, priority}) => {
 				</button>
 				<button
 					className='button-remove'
-					onClick={() => dispatch(removeTaskFromBoard({boardId, taskId}))}
+					onClick={() => dispatch(removeTaskFromBoard({boardId, columnId, taskId}))}
 				>
 					Удалить
 				</button>

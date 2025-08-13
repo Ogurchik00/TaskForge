@@ -45,6 +45,7 @@ const BoardCreate = ({boardCreateActive, activeAddBoard}) => {
 	const createBoard = () => {
 		dispatch(addBoard({text: title, description, colorBg: boardColor, colorText: titleColor}))
 		setTitle('')
+    boardCreateActive()
 	}
 
 	return (

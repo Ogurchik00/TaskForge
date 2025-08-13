@@ -40,7 +40,7 @@ const TextAddInputCustom = ({cb, data, textPlaceholder, textButton}) => {
 					buttons.map(({id, priority})=> 
 						<div
 							key={id}
-							className={`priority ${priority} ${activeId === id ? 'active' : ''}`}
+							className={`priority ${priority} ${activeId === id ? 'activeColor' : ''}`}
 							onClick={()=>onPriority(priority, id)}
 						>
 						</div>

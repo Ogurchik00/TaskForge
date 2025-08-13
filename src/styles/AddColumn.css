@@ -1,0 +1,25 @@
+
+.AddColumn {
+    width: 30%;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    position: absolute;
+    top: 35%;
+    left: 35%;
+    border: 1px solid black;
+    border-radius: 20px;
+    box-shadow: 0 0 8px 1px black;
+    background-color: var(--color-bg);
+}
+
+.addColumn-input {
+    width: 80%;
+    height: 20px;
+}
+
+.noActive {
+    display: none;
+}

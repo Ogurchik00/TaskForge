@@ -1,0 +1,25 @@
+
+.Column {
+  width: 500px;
+  margin: 10px;
+  border-radius: 10px;
+  position: relative;
+  background-color: aqua;
+}
+
+.column-tasks {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.column-title {
+  height: 30px;
+  text-align: center;
+}
+
+.removeColumn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
